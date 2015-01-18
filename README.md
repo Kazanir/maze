@@ -11,3 +11,5 @@ Possible todos:
 - Make the entire page a single, Gist- or Googlecode-like code display, with the "accordion" feature looking more like the expand/collapse of functions within common IDEs.
 - Display the original docblocks of each function, which are sadly not saved in whole form by the API module.
 - ??? Feature requests and ideas are welcome.
+
+Please pay no attention to the wizard behind the curtain of how hacky some of this code is. :)
