@@ -1,0 +1,17 @@
+name = API Class Mazes
+description = Extends the API module to make mazes of class files readable
+core = 7.x
+package = API
+
+dependencies[] = api
+dependencies[] = bootstrap
+dependencies[] = gplib
+dependencies[] = jquery_update
+dependencies[] = ctools
+dependencies[] = views
+dependencies[] = admin_menu
+dependencies[] = devel
+dependencies[] = views_bootstrap
+
+stylesheets[all][] = maze.css
+
