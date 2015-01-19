@@ -1,0 +1,69 @@
+diff --git a/bootstrap.info b/bootstrap.info
+index 4fb07c4..28ad9a8 100644
+--- a/bootstrap.info
++++ b/bootstrap.info
+@@ -188,3 +188,8 @@ multipliers[screen-md-max][] = 1.5x
+ multipliers[screen-md-max][] = 2x
+ multipliers[screen-lg-min][] = 1.5x
+ multipliers[screen-lg-min][] = 2x
++
++; Information added by drush on 2015-01-18
++version = "7.x-3.1-beta2+24-dev"
++project = "bootstrap"
++datestamp = "1421617306"
+\ No newline at end of file
+diff --git a/templates/system/breadcrumb.vars.php b/templates/system/breadcrumb.vars.php
+index 70fb9d9..108cf61 100644
+--- a/templates/system/breadcrumb.vars.php
++++ b/templates/system/breadcrumb.vars.php
+@@ -18,10 +18,14 @@ function bootstrap_preprocess_breadcrumb(&$variables) {
+ 
+   if (theme_get_setting('bootstrap_breadcrumb_title') && !empty($breadcrumb)) {
+     $item = menu_get_item();
+-    $breadcrumb[] = array(
+-      // If we are on a non-default tab, use the tab's title.
+-      'data' => !empty($item['tab_parent']) ? check_plain($item['title']) : drupal_get_title(),
+-      'class' => array('active'),
+-    );
++
++    $page_title = !empty($item['tab_parent']) ? check_plain($item['title']) : drupal_get_title();
++    if (!empty($page_title)) {
++      $breadcrumb[] = array(
++        // If we are on a non-default tab, use the tab's title.
++        'data' => $page_title,
++        'class' => array('active'),
++      );
++    }
+   }
+ }
+diff --git a/templates/views/views-bootstrap-accordion-plugin-style--api-members--code-list.tpl.php b/templates/views/views-bootstrap-accordion-plugin-style--api-members--code-list.tpl.php
+new file mode 100644
+index 0000000..b937cd7
+--- /dev/null
++++ b/templates/views/views-bootstrap-accordion-plugin-style--api-members--code-list.tpl.php
+@@ -0,0 +1,25 @@
++<?php if (!empty($title)): ?>
++  <h3><?php print $title ?></h3>
++<?php endif ?>
++
++<div id="views-bootstrap-accordion-<?php print $id ?>" class="<?php print $classes ?>">
++  <?php foreach ($rows as $key => $row): ?>
++  <div class="panel panel-default" id="code--this::<?php print $anchors[$key]; ?>">
++      <div class="panel-heading">
++        <h4 class="panel-title">
++          <a class="accordion-toggle"
++             data-toggle="collapse"
++             data-target="#collapse-<?php print $id . '-' . $key ?>"><?php print strip_tags($titles[$key]); ?></a>
++        </h4>
++      </div>
++
++      <div id="collapse-<?php print $id . '-' . $key ?>" class="panel-collapse collapse">
++        <div class="panel-body">
++          <?php print $row ?>
++        </div>
++      </div>
++    </div>
++  <?php endforeach ?>
++</div>
++
++
