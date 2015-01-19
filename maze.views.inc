@@ -61,6 +61,17 @@ function maze_views_default_views_alter(&$views) {
   $handler->display->display_options['fields']['code']['label'] = '';
   $handler->display->display_options['fields']['code']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Field: API documentation: Modifiers */
+  $handler->display->display_options['fields']['modifiers']['id'] = 'modifiers';
+  $handler->display->display_options['fields']['modifiers']['table'] = 'api_documentation';
+  $handler->display->display_options['fields']['modifiers']['field'] = 'modifiers';
+  $handler->display->display_options['fields']['modifiers']['relationship'] = 'did';
+  $handler->display->display_options['fields']['modifiers']['label'] = '';
+  $handler->display->display_options['fields']['modifiers']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['modifiers']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['modifiers']['alter']['text'] = '[modifiers] [title]';
+  $handler->display->display_options['fields']['modifiers']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: API documentation: Object type */
   $handler->display->display_options['sorts']['object_type']['id'] = 'object_type';
   $handler->display->display_options['sorts']['object_type']['table'] = 'api_documentation';
@@ -80,6 +91,7 @@ function maze_views_default_views_alter(&$views) {
 function maze_views_pre_render(&$view) {
   if ($view->name == 'api_members' && $view->current_display == 'code_list') {
     foreach ($view->result as $res) {
+      $res->api_documentation_api_members_modifiers = str_pad($res->api_documentation_api_members_modifiers, 18);
       $split = explode("::", $res->api_documentation_api_members_title);
       $cn = str_pad($split[0], 35);
       $res->api_documentation_api_members_title = $cn . $split[1];
