@@ -12,6 +12,10 @@ footer.container {
   width: 1410px;
 }
 
+.view-api-members .accordion-toggle {
+  cursor: pointer;
+}
+
 #class-api-code .panel-heading {
   padding: 4px 7px;
 }

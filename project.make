@@ -15,7 +15,7 @@ projects[bootstrap][version] = "3.x"
 projects[bootstrap][download][type] = "git"
 projects[bootstrap][download][branch] = "7.x-3.x"
 projects[bootstrap][download][url] = "http://git.drupal.org/project/bootstrap.git"
-projects[bootstrap][patch][] = "patches/code_list_accordion_template.patch"
+; projects[bootstrap][patch][] = "patches/code_list_accordion_template.patch"
 
 projects[grammar_parser_lib][download][branch] = "7.x-2.x"
 projects[grammar_parser_lib][download][type] = "git"

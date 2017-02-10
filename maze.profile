@@ -16,7 +16,6 @@ function maze_preprocess_api_class_page(&$variables) {
   $variables['theme_hook_suggestion'] = 'api_class_page__maze';
 
   $variables['code_view'] = &drupal_static('maze_class_page');
-  ($variables);
 }
 
 /**
