@@ -1,0 +1,15 @@
+"https://{default}/":
+    type: upstream
+    upstream: "php:http"
+
+"http://www.{default}/":
+    type: redirect
+    to: "https://{default}/"
+
+"http://{default}/":
+    type: redirect
+    to: "https://{default}/"
+
+"https://www.{default}/":
+    type: redirect
+    to: "https://{default}/"

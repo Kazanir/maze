@@ -1,0 +1,55 @@
+name: php
+
+type: "php:7.0"
+
+build:
+    flavor: drupal
+
+relationships:
+    database: "mysql:mysql"
+    redis: "redis:redis"
+
+dependencies:
+    php:
+        drush/drush: "8.0.3"
+
+runtime:
+    extensions:
+        - gmp
+        - redis
+
+web:
+    document_root: "/public"
+    passthru: "/index.php"
+
+disk: 2048
+
+mounts:
+    "/public/sites/default/files": "shared:files/files"
+    "/tmp": "shared:files/tmp"
+    "/private": "shared:files/private"
+
+crons:
+    drupal:
+        spec: "5 * * * *"
+        cmd: "cd public; drush core-cron"
+
+hooks:
+    build: |
+      (
+        cd public/profiles/maze/composer
+        composer install --no-dev --no-interaction --no-progress --optimize-autoloader
+      )
+
+      rm public/CHANGELOG.txt public/PATCHES.txt
+
+      drush dl registry_rebuild-7.x-2.2 -y
+
+      # Stuff to only run on local for development purposes.
+      if [ -f "../../shared/local-build.sh" ]; then
+        bash "../../shared/local-build.sh"
+      fi
+    deploy: |
+        cd public
+        bash profiles/maze/scripts/deploy.sh
+

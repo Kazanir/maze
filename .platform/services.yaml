@@ -1,0 +1,7 @@
+mysql:
+    type: mysql
+    disk: 7168
+
+redis:
+    type: redis
+

@@ -10,6 +10,7 @@ projects[views][version] = "3.x"
 projects[ctools][version] = "1.5"
 projects[jquery_update][version] = "2.4"
 projects[views_bootstrap][version] = "3.x"
+projects[composer_manager][version] = "1.8"
 
 projects[advancedqueue][version] = "1.x"
 projects[advancedqueue][download][type] = "git"

@@ -1,0 +1,12 @@
+{
+    "require": {
+        "symfony/yaml": "~2.8",
+        "nikic/php-parser": "~3",
+        "php": ">=5.3.0"
+    },
+    "config": {
+        "autoloader-suffix": "ComposerManager",
+        "vendor-dir": "../.platform/local/builds/default/public/profiles/maze/composer/vendor"
+    },
+    "prefer-stable": true
+}

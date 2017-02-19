@@ -3,9 +3,10 @@
 !.gitignore
 !.gitmodules
 
-modules/contrib
-themes/contrib
-libraries
+/modules/contrib
+/themes/contrib
+/libraries
+/composer/vendor
 
 # Don't ignore Platform.sh configuration files.
 !.platform*
