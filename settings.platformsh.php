@@ -39,6 +39,9 @@ if (isset($_ENV['PLATFORM_APP_DIR'])) {
   if (!isset($conf['file_temporary_path'])) {
     $conf['file_temporary_path'] = $_ENV['PLATFORM_APP_DIR'] . '/tmp';
   }
+  if (!isset($conf['maze_api_path'])) {
+    $conf['maze_api_path'] = $_ENV['PLATFORM_APP_DIR'] . '/api';
+  }
 }
 
 // Import variables prefixed with 'drupal:' into $conf.

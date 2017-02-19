@@ -7,16 +7,10 @@ build:
 
 relationships:
     database: "mysql:mysql"
-    redis: "redis:redis"
 
 dependencies:
     php:
         drush/drush: "8.0.3"
-
-runtime:
-    extensions:
-        - gmp
-        - redis
 
 web:
     document_root: "/public"
@@ -27,11 +21,12 @@ disk: 2048
 mounts:
     "/public/sites/default/files": "shared:files/files"
     "/tmp": "shared:files/tmp"
+    "/api": "shared:files/api"
     "/private": "shared:files/private"
 
 crons:
     drupal:
-        spec: "5 * * * *"
+        spec: "0 2 * * *"
         cmd: "cd public; drush core-cron"
 
 hooks:

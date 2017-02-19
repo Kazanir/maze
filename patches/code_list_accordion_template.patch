@@ -1,22 +1,8 @@
-diff --git a/bootstrap.info b/bootstrap.info
-index 4fb07c4..28ad9a8 100644
---- a/bootstrap.info
-+++ b/bootstrap.info
-@@ -188,3 +188,8 @@ multipliers[screen-md-max][] = 1.5x
- multipliers[screen-md-max][] = 2x
- multipliers[screen-lg-min][] = 1.5x
- multipliers[screen-lg-min][] = 2x
-+
-+; Information added by drush on 2015-01-18
-+version = "7.x-3.1-beta2+24-dev"
-+project = "bootstrap"
-+datestamp = "1421617306"
-\ No newline at end of file
 diff --git a/templates/system/breadcrumb.vars.php b/templates/system/breadcrumb.vars.php
 index 70fb9d9..108cf61 100644
 --- a/templates/system/breadcrumb.vars.php
 +++ b/templates/system/breadcrumb.vars.php
-@@ -18,10 +18,14 @@ function bootstrap_preprocess_breadcrumb(&$variables) {
+@@ -24,10 +24,14 @@ function bootstrap_preprocess_breadcrumb(&$variables) {
  
    if (theme_get_setting('bootstrap_breadcrumb_title') && !empty($breadcrumb)) {
      $item = menu_get_item();
