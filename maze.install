@@ -3,5 +3,8 @@
 function maze_install() {
   profile_load_install('standard');
   standard_install();
+
+  theme_enable(['bootstrap']);
+  variable_set('theme_default', 'bootstrap');
 }
 
