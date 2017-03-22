@@ -1,0 +1,7 @@
+<?php
+
+function maze_install() {
+  profile_load_install('standard');
+  standard_install();
+}
+

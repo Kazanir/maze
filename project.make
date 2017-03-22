@@ -29,9 +29,9 @@ projects[grammar_parser_lib][download][branch] = "7.x-2.x"
 projects[grammar_parser_lib][download][type] = "git"
 projects[grammar_parser_lib][download][url] = "http://git.drupal.org/project/grammar_parser_lib.git"
 
-projects[api][version] = "1.x"
+projects[api][version] = "2.x"
 projects[api][download][url] = "http://git.drupal.org/project/api.git"
-projects[api][download][branch] = "7.x-1.x"
+projects[api][download][branch] = "7.x-2.x"
 projects[api][download][type] = "git"
 
 libraries[grammar_parser][download][type] = "file"

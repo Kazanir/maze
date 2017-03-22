@@ -113,6 +113,12 @@ function maze_cron() {
   }
 }
 
+function maze_cron_queue_info_alter(&$queues) {
+  unset($queues['api_branch_update']);
+  unset($queues['api_parse']);
+  unset($queues['api_node_update']);
+}
+
 function _maze_api_queue_update_branch($item) {
   $data = $item->data;
   api_queue_update_branch($data);

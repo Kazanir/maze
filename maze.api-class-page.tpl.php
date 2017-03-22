@@ -106,7 +106,7 @@
 
       <div class="api-code-intro">
         <p>The code definition of properties and methods on this class, whether directly from this class or inherited from a parent.</p>
-        <p>"It's PHP: the code is the documentation." -- <a href="https://twitter.com/chx">chx</a></p>
+        <!-- <p>"It's PHP: the code is the documentation." - <a href="https://twitter.com/chx">chx</a></p> -->
       </div>
 
       <?php print $code_view; ?>
