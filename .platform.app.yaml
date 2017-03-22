@@ -29,8 +29,8 @@ crons:
         spec: "0 2 * * *"
         cmd: "cd public; drush core-cron"
     aq:
-        spec: "* * * * *"
-        cmd: "cd public; drush advancedqueue --all --timeout=50"
+        spec: "*/5 * * * *"
+        cmd: "cd public; drush advancedqueue --all --timeout=275"
 
 hooks:
     build: |
