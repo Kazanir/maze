@@ -12,18 +12,20 @@ projects[jquery_update][version] = "2.4"
 projects[views_bootstrap][version] = "3.x"
 projects[composer_manager][version] = "1.8"
 
+projects[views_megarow][version] = "1.x"
+projects[views_megarow][patch][] = "patches/views_megarow_nonentities.patch"
+
 projects[advancedqueue][version] = "1.x"
 projects[advancedqueue][download][type] = "git"
 projects[advancedqueue][download][branch] = "7.x-1.x"
 projects[advancedqueue][download][url] = "http://git.drupal.org/project/advancedqueue.git"
 projects[advancedqueue][download][working-copy] = TRUE
 
-projects[bootstrap][version] = "3.x"
-projects[bootstrap][download][type] = "git"
-projects[bootstrap][download][branch] = "7.x-3.x"
-projects[bootstrap][download][url] = "http://git.drupal.org/project/bootstrap.git"
-projects[bootstrap][download][working-copy] = "TRUE"
-; projects[bootstrap][patch][] = "patches/code_list_accordion_template.patch"
+projects[api_source][version] = "7.x-1.x"
+projects[api_source][download][type] = "git"
+projects[api_source][download][branch] = "7.x-1.x"
+projects[api_source][download][url] = "https://github.com/Kazanir/api_source.git"
+projects[api_source][download][working-copy] = "TRUE"
 
 projects[grammar_parser_lib][download][branch] = "7.x-2.x"
 projects[grammar_parser_lib][download][type] = "git"

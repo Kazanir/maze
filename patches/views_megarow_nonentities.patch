@@ -1,0 +1,20 @@
+--- a/views_megarow.module	2017-03-25 05:47:29.408081844 -0600
++++ b/views_megarow.module  2017-03-25 05:53:53.525100913 -0600
+@@ -173,10 +173,13 @@
+     $vars['attributes_array']['data-view-display'] = $vars['view']->current_display;
+     $result_entities = $vars['view']->query->get_result_entities($vars['view']->result);
+ 
+-    foreach ($vars['result'] as $count => $result) {
+-      $entity = $result_entities[1][$count];
+-      list($entity_id) = entity_extract_ids($result_entities[0], $entity);
+-      $vars['row_classes'][$count][] = 'item-' . $entity_id;
++    // If someone is trying to use megarows without real entities, let them do this.
++    if ($result_entities) {
++      foreach ($vars['result'] as $count => $result) {
++        $entity = $result_entities[1][$count];
++        list($entity_id) = entity_extract_ids($result_entities[0], $entity);
++        $vars['row_classes'][$count][] = 'item-' . $entity_id;
++      }
+     }
+   }
+ }
