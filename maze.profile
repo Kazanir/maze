@@ -31,7 +31,7 @@ function maze_advanced_queue_info() {
  * Implements hook_cron().
  */
 function maze_cron() {
-  // Since this is before checking Drupal 8 only for now, let's be generous.
+  // Since this is checking Drupal 8 only for now, let's be generous.
   $top = variable_get('maze_api_top_projects', 300);
   $queue = DrupalQueue::get('maze_api_branch_maintain');
 
